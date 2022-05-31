@@ -14,7 +14,13 @@ class Dialog {
     get everyMondayBtn() { return $('//android.widget.CheckedTextView[@index="0"]') }
     get days() { return $$('//android.widget.CheckedTextView') }
 
-    get viewBtn () { return $('//android.widget.TextView[@content-desc="Views"]') }
+    get viewBtn() { return $('//android.widget.TextView[@content-desc="Views"]') }
+
+    get repeatAlarmBtn() { return $('//android.widget.Button[@content-desc="Repeat alarm"]') };
+
+    weekCheckBox(index) { 
+        return $(`//android.widget.CheckedTextView[@index="${index}"]`)
+    }
 }
 
 module.exports = new Dialog();
