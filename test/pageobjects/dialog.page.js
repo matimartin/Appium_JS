@@ -1,3 +1,5 @@
+const { Return } = require("wd/lib/special-keys");
+
 class Dialog {
     /**
      * define selectors using getter methods
@@ -16,11 +18,13 @@ class Dialog {
 
     get viewBtn() { return $('//android.widget.TextView[@content-desc="Views"]') }
 
-    get repeatAlarmBtn() { return $('//android.widget.Button[@content-desc="Repeat alarm"]') };
+    get repeatAlarmBtn() { return $('//android.widget.Button[@content-desc="Repeat alarm"]') }
 
     weekCheckBox(index) { 
         return $(`//android.widget.CheckedTextView[@index="${index}"]`)
     }
+
+    get tabsBtn() { return $('//android.widget.TextView[@content-desc="Tabs"]') }
 }
 
 module.exports = new Dialog();
