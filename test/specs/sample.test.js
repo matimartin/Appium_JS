@@ -65,5 +65,30 @@ describe('Example Appium App Test', ()=> {
         console.log("The attribute value for checked after clicked now is: " + await isChecked);
         expect(await isChecked).equal('true');
 
+        await dialog.dialogOkBtn.click();
+
     });
+
+    it('Scroll down and something else..', async ()=> {
+
+        await driver.back();
+        await driver.back();
+
+        await dialog.viewBtn.click();
+
+        await driver.touchAction([
+            { action: 'press', x: 500, y: 1400 },
+            { action: 'moveTo', x: 500, y: 300 },
+            'release',
+            { action: 'press', x: 500, y: 1400 },
+            { action: 'moveTo', x: 500, y: 300 },
+            'release',
+            { action: 'press', x: 500, y: 1400 },
+            { action: 'moveTo', x: 500, y: 300 },
+            'release'
+        ])
+        
+        await dialog.tabsBtn.click();
+    });
+    
 });
