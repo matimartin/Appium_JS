@@ -69,11 +69,14 @@ describe('Example Appium App Test', ()=> {
 
     });
 
-    it('Scroll down and something else..', async ()=> {
+    it.only('Scroll down and something else..', async ()=> {
 
-        await driver.back();
-        await driver.back();
+        let isEnabled;
+        let isSelected;
+        let isDisplayed;
 
+        //await driver.back();
+        //await driver.back();
         await dialog.viewBtn.click();
 
         await driver.touchAction([
@@ -88,7 +91,18 @@ describe('Example Appium App Test', ()=> {
             'release'
         ])
         
-        await dialog.tabsBtn.click();
+        await dialog.tabBtn.click();
+        await dialog.contentByIdBtn.click();
+        await dialog.tabs[0].click();
+
+        isEnabled = await dialog.tabs[0].isEnabled();
+        isSelected = await dialog.tabs[0].isSelected();
+        isDisplayed = await dialog.tabs[0].isDisplayed();
+
+        console.log('is enabled: ' + await isEnabled);
+        console.log('is selected: ' + await isSelected);
+        console.log('is disabled: ' + await isDisplayed);
+
     });
     
 });

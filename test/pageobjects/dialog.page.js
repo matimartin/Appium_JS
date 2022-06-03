@@ -24,7 +24,12 @@ class Dialog {
         return $(`//android.widget.CheckedTextView[@index="${index}"]`)
     }
 
-    get tabsBtn() { return $('//android.widget.TextView[@content-desc="Tabs"]') }
+    get tabBtn() { return $('//android.widget.TextView[@content-desc="Tabs"]') }
+    get contentByIdBtn() { return $('//android.widget.TextView[@content-desc="1. Content By Id"]') }
+    get tabs() { return $$('android.widget.TextView') }
+    get tab1Details() { return $('~tab1')} // we use accessibility id
+    get tab2Details() { return $('~tab2')}
+    get tab3Details() { return $('~tab3')}
 }
 
 module.exports = new Dialog();
