@@ -95,14 +95,23 @@ describe('Example Appium App Test', ()=> {
         await dialog.contentByIdBtn.click();
         await dialog.tabs[0].click();
 
-        isEnabled = await dialog.tabs[0].isEnabled();
-        isSelected = await dialog.tabs[0].isSelected();
-        isDisplayed = await dialog.tabs[0].isDisplayed();
+        for (i = 0; i < 3; i++) {
+            isEnabled = await dialog.tabs[0].isEnabled();
+            isSelected = await dialog.tabs[0].isSelected();
+            isDisplayed = await dialog.tabs[0].isDisplayed();
 
-        console.log('is enabled: ' + await isEnabled);
-        console.log('is selected: ' + await isSelected);
-        console.log('is disabled: ' + await isDisplayed);
+            console.log(`Tab: ${i+1}` );
+            console.log('is enabled: ' + await isEnabled);
+            console.log('is selected: ' + await isSelected);
+            console.log('is disabled: ' + await isDisplayed);
+            
+            if (isEnabled && isSelected) {
+                console.log('Tab Details 1: '+ await dialog.tab1Details.isDisplayed());
+                console.log('Tab Details 2: '+ await dialog.tab2Details.isDisplayed());
+                console.log('Tab Details 3: '+ await dialog.tab3Details.isDisplayed());               
+            }
 
+        }
     });
-    
+
 });
