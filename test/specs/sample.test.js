@@ -69,14 +69,14 @@ describe('Example Appium App Test', ()=> {
 
     });
 
-    it.only('Verify scroll down and elements states', async ()=> {
+    it('Verify scroll down and elements states', async ()=> {
 
         let isEnabled;
         let isSelected;
         let isDisplayed;
 
-        //await driver.back();
-        //await driver.back();
+        await driver.back();
+        await driver.back();
         await dialog.viewBtn.click();
 
         await driver.touchAction([
