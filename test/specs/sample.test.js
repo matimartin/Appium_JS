@@ -69,7 +69,7 @@ describe('Example Appium App Test', ()=> {
 
     });
 
-    it.only('Scroll down and something else..', async ()=> {
+    it.only('Verify scroll down and elements states', async ()=> {
 
         let isEnabled;
         let isSelected;
@@ -105,10 +105,10 @@ describe('Example Appium App Test', ()=> {
             console.log('is selected: ' + await isSelected);
             console.log('is disabled: ' + await isDisplayed);
             
-            if (isEnabled && isSelected) {
-                console.log('Tab Details 1: '+ await dialog.tab1Details.isDisplayed());
-                console.log('Tab Details 2: '+ await dialog.tab2Details.isDisplayed());
-                console.log('Tab Details 3: '+ await dialog.tab3Details.isDisplayed());               
+            if (isEnabled && isDisplayed) {
+                console.log('Tab Details 1: ' + await dialog.tab1Details.isDisplayed());
+                console.log('Tab Details 2: ' + await dialog.tab2Details.isDisplayed());
+                console.log('Tab Details 3: ' + await dialog.tab3Details.isDisplayed());               
             }
 
         }
