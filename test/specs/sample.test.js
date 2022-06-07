@@ -2,6 +2,15 @@ const dialog = require("../pageobjects/dialog.page");
 const expect = require('chai').expect;
 
 describe('Example Appium App Test', ()=> {
+
+    before(async ()=>{
+        console.log('The before() function will be exectuted at the start of the test suit');
+    });
+
+    beforeEach(async ()=>{
+        console.log('The beforeEach() function will be executed before every test');
+    });
+
     it('Happy Path', async ()=> {
 
         await dialog.appBtn.click();
@@ -10,8 +19,8 @@ describe('Example Appium App Test', ()=> {
         await dialog.alertDialogBtn.click();
         await dialog.textEntryDialogBtn.click();
 
-        // Implicit wait - by defauld is written in wdio.conf file
-        // await driver.setImplicitWaitTimeout(10000);
+        // Implicit wait - by default is written in wdio.conf file
+        // Explicit wait - Await driver.setImplicitWaitTimeout(10000);
 
         await dialog.userNameField.addValue("Testing UserName 1");
         await dialog.userNameField.clearValue();
@@ -114,4 +123,8 @@ describe('Example Appium App Test', ()=> {
         }
     });
 
+    afterEach(async ()=>{
+        console.log('The afterEach() function will be executed after every test, then a good idea is to reset the app that way every test has a fresh app to run the test');
+        //await driver.reset();
+    }); 
 });
