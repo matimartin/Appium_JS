@@ -28,8 +28,14 @@ class Dialog {
     get contentByIdBtn() { return $('//android.widget.TextView[@content-desc="1. Content By Id"]') }
     get tabs() { return $$('android.widget.TextView') }
     get tab1Details() { return $('~tab1')} // we use accessibility id here
-    get tab2Details() { return $('~tab2')}
-    get tab3Details() { return $('~tab3')}
+    get tab2Details() { return $('~tab2')} // we use accessibility id here
+    get tab3Details() { return $('~tab3')} // we use accessibility id here
+
+    //#region data activity
+    get cancelDialogShortMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a message"]') }
+    get cancelDialogLongtMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a long message"]') }
+    get cancelDialogUltraMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with ultra long message"]') }
+    //#endregion
 }
 
 module.exports = new Dialog();
