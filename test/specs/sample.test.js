@@ -3,13 +3,13 @@ const expect = require('chai').expect;
 
 describe('Example Appium App Test', ()=> {
 
-    before(async ()=>{
-        console.log('The before() function will be exectuted at the start of the test suit');
-    });
+    //before(async ()=>{
+    //    console.log('The before() function will be exectuted at the start of the test suit');
+    //});
 
-    beforeEach(async ()=>{
-        console.log('The beforeEach() function will be executed before every test');
-    });
+    //beforeEach(async ()=>{
+    //    console.log('The beforeEach() function will be executed before every test');
+    //});
 
     it('Happy Path', async ()=> {
 
@@ -123,8 +123,9 @@ describe('Example Appium App Test', ()=> {
         }
     });
 
-    afterEach(async ()=>{
-        console.log('The afterEach() function will be executed after every test, then a good idea is to reset the app that way every test has a fresh app to run the test');
-        //await driver.reset();
-    }); 
+    //afterEach(async ()=>{
+    //    console.log('The afterEach() function will be executed after every test, then a good idea is to reset the app that way every test has a fresh app to run the test');
+    //  await driver.resetApp();
+    //}); 
+
 });

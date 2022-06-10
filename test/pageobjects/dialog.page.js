@@ -1,3 +1,4 @@
+const { title } = require("wd/lib/commands");
 const { Return } = require("wd/lib/special-keys");
 
 class Dialog {
@@ -35,7 +36,14 @@ class Dialog {
     get cancelDialogShortMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a message"]') }
     get cancelDialogLongtMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with a long message"]') }
     get cancelDialogUltraMessageBtn() { return $('//android.widget.Button[@content-desc="OK Cancel dialog with ultra long message"]') }
+    get shortMessageMsg() { return $('//android.widget.TextView[@resource-id="android:id/alertTitle"]') }
+                
+    getDialogModalTitle() {
+        let title = this.shortMessageMsg.getText();
+        return title;
+    }
     //#endregion
+    
 }
 
 module.exports = new Dialog();
